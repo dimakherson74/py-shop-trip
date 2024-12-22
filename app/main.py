@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 import json
 
@@ -6,7 +7,8 @@ from app.customer import Customer
 
 
 def shop_trip() -> None:
-    with open("config.json") as config:
+    config_path = os.path.join(os.path.dirname(__file__), "config.json")
+    with open(config_path) as config:
         config_data = json.load(config)
     fuel_prize = config_data["FUEL_PRICE"]
 
@@ -47,6 +49,7 @@ def shop_trip() -> None:
         else:
             customer.customer_ride_to_shop(shop_obj)
             now = datetime.now()
+            print()
             print(now.strftime("Date: %d/%m/%Y %H:%M:%S"))
             print(f"Thanks, {customer.name}, for your purchase!")
             print("You have bought:")
@@ -61,5 +64,9 @@ def shop_trip() -> None:
                           * shop_obj.products["butter"])
             print(f"Total cost is {total_cost} dollars")
             print("See you again!")
+            print()
             print(f"{customer.name} rides home")
             print(f"{customer.name} now has {customer.money - costs} dollars")
+            print()
+
+shop_trip()
