@@ -23,8 +23,8 @@ class Customer:
     def cost_of_the_trip(
             self,
             fuel_prize: float,
-            customer_location: list,
-            shop_location: list) -> float:
+            customer_location: list[int],
+            shop_location: list[int]) -> float:
         distance = math.sqrt(
             (shop_location[0] - customer_location[0]) ** 2
             + (shop_location[1] - customer_location[1]) ** 2)
@@ -40,14 +40,14 @@ class Customer:
 
     def bought_milk(self, product_milk: float) -> None:
         print(
-            f"{self.product_cart["milk"]} milks "
-            f"for {self.product_cart["milk"] * product_milk} dollars")
+            f'{self.product_cart["milk"]} milks '
+            f'for {self.product_cart["milk"] * product_milk} dollars')
 
     def bought_bread(self, product_bread: float) -> None:
         print(
-            f"{self.product_cart["bread"]} bread "
-            f"for {self.product_cart["bread"] * product_bread} dollars")
+            f'{self.product_cart["bread"]} bread '
+            f'for {self.product_cart["bread"] * product_bread} dollars')
 
     def bought_butter(self, product_butter: float) -> None:
-        print(f"{self.product_cart["butter"]} butter "
-              f"for {self.product_cart["butter"] * product_butter} dollars")
+        print(f'{self.product_cart["butter"]} butter '
+              f'for {self.product_cart["butter"] * product_butter} dollars')

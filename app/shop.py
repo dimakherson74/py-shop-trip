@@ -4,7 +4,7 @@ class Shop:
         self.location = location
         self.products = products
 
-    def prise_products(
+    def price_products(
             self,
             quantity_milk: int,
             quantity_bread: int,

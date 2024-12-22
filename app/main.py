@@ -31,7 +31,7 @@ def shop_trip() -> None:
             min_cost = (customer.cost_of_the_trip(
                 fuel_prize,
                 customer.location,
-                shop.location) * 2 + shop.prise_products(
+                shop.location) * 2 + shop.price_products(
                     customer.product_cart["milk"],
                     customer.product_cart["bread"],
                     customer.product_cart["butter"]
